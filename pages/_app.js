@@ -1,5 +1,8 @@
-import Head from "next/head";
-import Layout from "../components/layout/layout";
+import Head from 'next/head'
+import Layout from '../components/layout/layout'
+import postsContext from '../contexts/postsContext'
+
+const { PostsProvider } = postsContext
 
 export default ({ Component, pageProps }) => (
   <Layout>
@@ -12,6 +15,8 @@ export default ({ Component, pageProps }) => (
         crossOrigin="anonymous"
       />
     </Head>
-    <Component {...pageProps} />
+    <PostsProvider>
+      <Component {...pageProps} />
+    </PostsProvider>
   </Layout>
-);
+)
