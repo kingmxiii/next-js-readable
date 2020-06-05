@@ -1,8 +1,8 @@
-
+import PostsList from '../components/postslist/postslist'
 export default function Home() {
   return (
     <div className="container">
-      <h1>Hello World</h1>
+      <PostsList />
     </div>
   )
 }

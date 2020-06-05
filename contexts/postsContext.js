@@ -16,7 +16,7 @@ const usePosts = () => {
 const reducer = (state, action) => {
   switch (action.type) {
     case 'SET_PRODUCTS':
-      return { ...state, products: action.payload }
+      return { ...state, posts: action.payload, loading: false }
     case 'SET_LOADING':
       return { ...state, loading: action.payload }
     default:
@@ -25,7 +25,7 @@ const reducer = (state, action) => {
 }
 
 const defaultState = {
-  products: {},
+  posts: {},
   loading: false,
 }
 
@@ -39,7 +39,6 @@ const PostsProvider = (props) => {
       dispatch({ type: 'SET_PRODUCTS', payload: response.data })
     } catch (error) {
       console.error('Could not get products')
-    } finally {
       dispatch({ type: 'SET_LOADING', payload: false })
     }
   }

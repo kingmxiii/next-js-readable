@@ -33,6 +33,6 @@ export default (req, res) => {
       getPosts(req, res)
       break
     default:
-      res.status(405).send('Method No Allowed')
+      res.status(405).send('Method Not Allowed')
   }
 }
